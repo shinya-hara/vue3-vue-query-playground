@@ -1,6 +1,10 @@
 <template>
   <h1>{{ title }}</h1>
-  <img style="margin: 0 auto" alt="Vue logo" src="./assets/images/logo.png" />
+  <img
+    style="margin: 0 auto; width: 50px"
+    alt="Vue logo"
+    src="./assets/images/logo.png"
+  />
   <nav>
     Router:
     <router-link to="/">/</router-link> |
