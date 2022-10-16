@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router';
 // eslint-disable-next-line import/no-unresolved
 import routes from '~pages';
 
+export { routes };
+
 const router = createRouter({
   history: createWebHistory(),
   routes,

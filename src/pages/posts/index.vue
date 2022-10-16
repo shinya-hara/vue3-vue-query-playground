@@ -1,4 +1,5 @@
 <template>
+  <h1>Posts</h1>
   <div>
     <span v-if="isLoading">Loading...</span>
     <span v-else-if="isError">Error occurred...</span>
