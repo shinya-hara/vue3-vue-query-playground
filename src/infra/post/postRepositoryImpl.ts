@@ -10,6 +10,11 @@ export class PostRepositoryImpl {
     return data;
   }
 
+  async findById(postId: number): Promise<Post> {
+    const { data } = await this.apiClient.get<Post>(`/posts/${postId}`);
+    return data;
+  }
+
   async create(post: CreatePostDto): Promise<Post> {
     return {
       ...post,
