@@ -1,5 +1,7 @@
 <template>
-  <h1>Post detail</h1>
+  <h1>Post detail #{{ postId }}</h1>
+  <router-link :to="`/posts/${postId - 1}`">＜PREV</router-link> |
+  <router-link :to="`/posts/${postId + 1}`">NEXT＞</router-link>
   <div>
     <span v-if="isLoading">Loading...</span>
     <span v-else-if="isError">Error occurred...</span>
@@ -13,8 +15,7 @@
 <script setup lang="ts">
 import { useFetchPostById } from '@/composables/usePosts';
 
-const { params } = useRoute();
-
-const postId = Number(params.id);
+const props = defineProps<{ id: string }>();
+const postId = computed(() => Number(props.id));
 const { data: post, isLoading, isError } = useFetchPostById(postId);
 </script>
